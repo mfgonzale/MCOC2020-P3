@@ -6,11 +6,11 @@
 Los hormigones masivos se caracterizan por ser hormigones de gran volumen y se pueden encontrar en casi todas las obras construidas. Un factor de interés en este proyecto es la generación de calor que produce la hidratación del cemente, llegando a tener en el hormigón masivo distintos valores de temperaturas en el tiempo, llegando a durar días incluso.
 El modelo a usar en esta entrega se basa en lo siguiente
 
-![imagen](/Ec1.png)
+![imagen](/ec1.png)
 
 En el caso de este proyecto de usará una barra de 1 metro con condiciones de borde como se presentan a continuación
  
-![imagen](/Cond_borde.png)
+![imagen](/cond_borde.png)
 
 
 # Resultados.
