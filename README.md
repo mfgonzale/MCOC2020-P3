@@ -25,3 +25,6 @@ En el caso de este proyecto de usará una barra de 1 metro con condiciones de bo
   
   
 ![imagen](/x=0.416.png)
+
+
+Como se puede ver, el método es convergente para cualquier variación de tiempo dado.
