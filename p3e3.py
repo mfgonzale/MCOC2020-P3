@@ -21,19 +21,19 @@ u_k[:]  = 20.
 #Condiciones de Borde
 u_k[-1] = 20.
 
-K = 79.5 # m2 / s
+K = 79.5*0.029 # m2 / s
 c = 450. # J/kg C
 rho=7800.# kg/m3
 
-def u_fourier(x,t,L,alp,N=50000):
+def u_fourier(x,t,L,alp,N=10000):
 	suma=0.
 	for n in range(1,N):
-		suma += (40*(1-(-1**n)))/(n*np.pi) * np.sin(n*np.pi*x/L)*np.exp(-alp * (np.pi*n/L)**2 * t)
+		suma += (40*(1-((-1)**n)))/(n*np.pi) * np.sin(n*np.pi*x/L)*np.exp(-alp * (np.pi*n/L)**2 * t)
 	return suma
 
 dts = [1.,5.,10.,50.,100.]
 for dt in dts:
-	alpha=K*dt/(c*rho* dx**2)*0.029
+	alpha=K*dt/(c*rho* dx**2)
 	Nt = 97200./dt
 	u_k  = np.zeros((N+1))
 	u_km1  = np.zeros((N+1))
@@ -94,10 +94,15 @@ for dt in dts:
 	plot(time,data8,label=f'Malla 20 dt= {int(dt)}s')
 	legend(loc='upper right')
 	savefig("x=0.416.png")
-#figure(0)
-#plot(array(time),u_fourier(0.104,array(time),L,alp))
-#figure(1)
-#plot(array(time),u_fourier(0.208,array(time),L,alp))
-#figure(2)
-#plot(array(time),u_fourier(0.416,array(time),L,alp))
+
+figure(0)
+t = np.linspace(0,97200,500)
+plot(t/3600,u_fourier(.104,t,L, K/(c*rho)),'--k',label='Solucion de Fourier')
+legend(loc='upper right')
+figure(1)
+plot(t/3600,u_fourier(.208,t,L, K/(c*rho)),'--k',label='Solucion de Fourier')
+legend(loc='upper right')
+figure(2)
+plot(t/3600,u_fourier(.416,t,L, K/(c*rho)),'--k',label='Solucion de Fourier')
+legend(loc='upper right')
 show()
