@@ -11,7 +11,7 @@ x = np.linspace(0,L,N+1)
 #Arreglo con la solucion
 
 dt = 2.
-Nt = 10000#97200
+Nt = 50000#97200
 u_k  = np.zeros((N+1))
 u_km1  = np.zeros((N+1))
 
