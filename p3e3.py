@@ -53,7 +53,7 @@ for dt in dts:
 		#print(f'k= {k},t={t}')
 		for i in range(1,N):
 			if i==N:
-				u_km1[N-i]= u_k[N-i+1]-5*dx  # condicion borde = 5
+				u_k[N-i]= u_k[N-i+1]-5*dx  # condicion borde = 5
 			else:
 				u_km1[N-i]= u_k[N-i] + alpha*(u_k[N-i+1] - 2*u_k[N-i] + u_k[N-i-1])
 
