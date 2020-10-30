@@ -31,3 +31,4 @@ Para realizar la discretización de las condiciones de borde naturales se genera
 # Conclusión
 
 Como se puede ver, el método es convergente para cualquier variación de tiempo dado pues se encuentran cercanas a la curva proporcionada por la serie de Fourier. La variación resulta muy pequeña entre todas las curvas, por lo que puede confirmarse que si convergen. 
+Un caso al que se podría aplicar la condición de borde natural sería cuando se tiene temperatura ambiente como condición de borde, pues no se exige que la temperatura en el borde sea esa, pero es la temperatura a la que se va a tender.
