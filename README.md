@@ -9,7 +9,7 @@ El modelo a usar en esta entrega se basa en la ecuación de difusión, que se ve
 
 ![imagen](/ec1.PNG)
 
-En el caso de este proyecto se usará una barra de 1 metro con condiciones de borde como se presentan a continuación
+En el caso de este proyecto se usará una barra de 1.04 metros con condiciones de borde como se presentan a continuación:
  
 ![imagen](/cond_borde.PNG)
 
