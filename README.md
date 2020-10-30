@@ -16,15 +16,15 @@ En el caso de este proyecto se usará una barra de 1 metro con condiciones de bo
 
 # Resultados.
 
- Al plantear un código que imprimiera gráficos para distintas mallas en tres posiciones, las cuales son x = 104(m), x = 208 (m) y x = 416 (m), en distintos intervalos de tiempo se obtienen los siguientes gráficos:
+ Al plantear un código que imprimiera gráficos para distintas mallas en tres posiciones, las cuales son x = 0.104(m), x = 0.208 (m) y x = 0.416 (m), en distintos intervalos de tiempo se obtienen los siguientes gráficos:
  
- ![imagen](/x=0.104.png)
+ ![imagen](/x=0.104.jpeg)
  
 
-![imagen](/x=0.208.png)
+![imagen](/x=0.208.jpeg)
   
   
-![imagen](/x=0.416.png)
+![imagen](/x=0.416.jpeg)
 
 Para realizar la discretización de las condiciones de borde naturales se generaron los casos de la primera columna con la condición derivada inicial planteada. Luego se arregló la formula en el formato u[k, n-2] = u[k, n-1] - 5k. Entonces para realizar ese cálculo se invirtió el recorrido de la matriz de derecha a izquierda, es decir, de N a 0.
 
