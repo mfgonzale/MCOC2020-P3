@@ -3,7 +3,7 @@
 # Informe sobre replicación de tesis de Contreras usando diferencias finitas 
 
 # Introducción.
-Los hormigones masivos se caracterizan por ser hormigones de gran volumen y se pueden encontrar en casi todas las obras construidas. Un factor de interés en este proyecto es la generación de calor que produce la hidratación del cemente, llegando a tener en el hormigón masivo distintos valores de temperaturas en el tiempo, llegando a durar días incluso. Se estima la difusión de calor de forma unidireccional (en el eje x) y que se difunde de forma simétrica, por lo que se toman tres nodos dentro del molde. Para estimar los valores de temperatura en el tiempo se simulará la difusión térmica usando diferencias finitas.
+Los hormigones masivos se caracterizan por ser hormigones de gran volumen y se pueden encontrar en casi todas las obras construidas. Un factor de interés en este proyecto es la generación de calor que produce la hidratación del cemente, llegando a tener en el hormigón masivo distintos valores de temperaturas en el tiempo, llegando a durar días incluso. Se estima la difusión de calor de forma unidireccional (en el eje x) y que se difunde de forma simétrica, por lo que se toman tres nodos dentro del molde. Para estimar los valores de temperatura en el tiempo se simulará la difusión térmica usando diferencias finitas. Además se usará la serie de Fourier planteada en la tesis de Contreras para analizar la convergencia de las curvas.
 
 El modelo a usar en esta entrega se basa en la ecuación de difusión, que se ve como sigue:
 
@@ -29,4 +29,4 @@ En el caso de este proyecto se usará una barra de 1 metro con condiciones de bo
 
 # Conclusión
 
-Como se puede ver, el método es convergente para cualquier variación de tiempo dado con una variación muy pequeña entre todas las curvas.
+Como se puede ver, el método es convergente para cualquier variación de tiempo dado pues se encuentran cercanas a la curva proporcionada por la serie de Fourier. La variación resulta muy pequeña entre todas las curvas, por lo que puede confirmarse que si convergen. 
