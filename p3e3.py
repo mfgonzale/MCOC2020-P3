@@ -10,8 +10,8 @@ x = np.linspace(0,L,N+1)
 
 #Arreglo con la solucion
 
-dt = 1.
-Nt = 5000#97200
+dt = 2.
+Nt = 10000#97200
 u_k  = np.zeros((N+1))
 u_km1  = np.zeros((N+1))
 
@@ -19,8 +19,7 @@ u_km1  = np.zeros((N+1))
 u_k[:]  = 20.
 
 #Condiciones de Borde
-u_k[0]  = 0.
-u_k[-1] = 0.
+u_k[-1] = 20.
 
 K = 79.5 # m2 / s
 c = 450. # J/kg C
@@ -30,21 +29,20 @@ def u_fourier(x,t,L,alp,N=50000):
 	suma=0.
 	for n in range(1,N):
 		suma += (40*(1-(-1**n)))/(n*np.pi) * np.sin(n*np.pi*x/L)*np.exp(-alp * (np.pi*n/L)**2 * t)
-	return suma 
+	return suma
 
 dts = [1.,5.,10.,50.,100.]
 for dt in dts:
-	alp=K*dt/(c*rho* dx**2)*0.029
+	alpha=K*dt/(c*rho* dx**2)*0.029
 	Nt = 97200./dt
 	u_k  = np.zeros((N+1))
 	u_km1  = np.zeros((N+1))
-	
+
 	#Condicion inicial
 	u_k[:]  = 20.
-	
+
 	#Condiciones de Borde
-	u_k[0]  = 0.
-	u_k[-1] = 0.
+	u_k[-1] = 20.
 	time=[]
 	data2=[]
 	data4=[]
@@ -54,7 +52,13 @@ for dt in dts:
 		time.append(t/3600.)
 		#print(f'k= {k},t={t}')
 		for i in range(1,N):
-			u_km1[i] = u_k[i] + alp*(u_k[i+1] - 2*u_k[i] + u_k[i-1])
+			if i==N:
+				u_km1[N-i]= u_k[N-i+1]-5*dx  # condicion borde = 5
+			else:
+				u_km1[N-i]= u_k[N-i] + alpha*(u_k[N-i+1] - 2*u_k[N-i] + u_k[N-i-1])
+
+
+		#	u_km1[i] = u_k[i] + alp*(u_k[i+1] - 2*u_k[i] + u_k[i-1])
 		u_k = u_km1
 		data2.append(u_k[2])
 		data4.append(u_k[4])
